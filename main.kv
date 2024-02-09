@@ -1,0 +1,25 @@
+#: include user/intro/intro.kv
+#: include user/login/login.kv
+#: include etudiants/liste_etudiants/liste_etudiants.kv
+
+#: import IntroScreen user.intro.intro_screen.IntroScreen
+#: import LoginScreen user.login.login_screen.LoginScreen
+#: import ListeEtudiantsScreen etudiants.liste_etudiants.liste_etudiants_screen.ListeEtudiantsScreen
+
+#: import utils kivy.utils
+
+<WindowManager>:
+    id: screen_mgr
+    screen_mgr: screen_mgr
+
+    IntroScreen:
+        manager: screen_mgr
+        name: "intro"
+    LoginScreen:
+        manager: screen_mgr
+        name: "login"
+    ListeEtudiantsScreen:
+        manager: screen_mgr
+        name: "etudiants"
+
+
