@@ -8,7 +8,7 @@ from kivymd.app import MDApp
 class WindowManager(ScreenManager):
     def route_initial(self):
         self.transition = NoTransition()
-        self.current = "login"
+        self.current = "etudiants"
 
 class MainApp(MDApp):
     def build(self):
