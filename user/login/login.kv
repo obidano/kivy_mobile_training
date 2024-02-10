@@ -23,6 +23,7 @@
                 halign: "center"
             MDTextField:
                 mode: "outlined"
+                on_text: root.saisie_username(self.text)
                 MDTextFieldHintText:
                     text: "Nom d'utilisateur"
                 MDTextFieldLeadingIcon:
@@ -32,6 +33,7 @@
                 height: dp(20)
             MDTextField:
                 mode: "outlined"
+                on_text: root.saisie_mot_passe(self.text)
                 MDTextFieldHintText:
                     text: "Mot de passe"
                 MDTextFieldLeadingIcon:
@@ -44,6 +46,7 @@
             MDButton:
                 theme_width: "Custom"
                 size_hint: 1, 1
+                on_release: root.valider()
                 MDButtonText:
                     text: "Confirmer"
                     pos_hint: {"center_x": 0.5, "center_y": 0.5}
