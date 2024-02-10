@@ -13,6 +13,29 @@
                 height: dp(100)
 #                size_hint: 0.5, 0.2
 #                pos_hint: {"center_x": 0.5}
+            MDLabel:
+                text: "[size=38][b]Connexion[/b][/size]"
+                markup: True
+                halign: "center"
+            MDLabel:
+                text: "[size=20]Plateforme pour CP[/size]"
+                markup: True
+                halign: "center"
+            MDTextField:
+                mode: "outlined"
+                MDTextFieldHintText:
+                    text: "Nom d'utilisateur"
+                MDTextFieldLeadingIcon:
+                    icon: "account-box-outline"
+            Widget:
+                size_hint: 1, None
+                height: dp(20)
+            MDTextField:
+                mode: "outlined"
+                MDTextFieldHintText:
+                    text: "Mot de passe"
+                MDTextFieldLeadingIcon:
+                    icon: "lock"
 
 
             Widget:
