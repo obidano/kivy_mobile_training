@@ -13,3 +13,14 @@
                     icon: "calendar"
                 MDActionTopAppBarButton:
                     icon: "account-circle-outline"
+        MDBoxLayout:
+            pos_hint: {"top": 0.9}
+            orientation: "vertical"
+            padding: dp(20)
+            MDLabel:
+                text: "Etudiants (16)"
+                id: label_id
+            ScrollView:
+                MDList:
+                    id: ma_liste_de_donnee
+            Widget:
