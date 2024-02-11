@@ -1,3 +1,5 @@
 kivy
 kivymd
 kvhot
+faker
+python-dateutil
