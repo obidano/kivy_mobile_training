@@ -13,54 +13,43 @@
                 height: dp(100)
 #                size_hint: 0.5, 0.2
 #                pos_hint: {"center_x": 0.5}
-            Widget:
-                size_hint: 1, None
-                height: dp(50)
             MDLabel:
                 text: "[size=38][b]Connexion[/b][/size]"
                 markup: True
                 halign: "center"
-                size_hint: 1, None
-                height: dp(40)
             MDLabel:
                 text: "[size=20]Plateforme pour CP[/size]"
                 markup: True
                 halign: "center"
-                size_hint: 1, None
-                height: dp(21)
-            Widget:
-                size_hint: 1, None
-                height: dp(20)
             MDTextField:
-                mode: "rectangle"
+                mode: "outlined"
                 on_text: root.saisie_username(self.text)
-                hint_text: "Nom d'utilisateur"
-                icon_left: "account-box-outline"
+                MDTextFieldHintText:
+                    text: "Nom d'utilisateur"
+                MDTextFieldLeadingIcon:
+                    icon: "account-box-outline"
             Widget:
                 size_hint: 1, None
                 height: dp(20)
             MDTextField:
-                mode: "rectangle"
+                mode: "outlined"
                 on_text: root.saisie_mot_passe(self.text)
-                hint_text: "Mot de passe"
-                password: True
-                icon_left: "lock"
+                MDTextFieldHintText:
+                    text: "Mot de passe"
+                MDTextFieldLeadingIcon:
+                    icon: "lock"
 
             Widget:
                 size_hint: 1, None
                 height: dp(20)
 
-            MDRectangleFlatButton:
+            MDButton:
                 theme_width: "Custom"
-                size_hint: 1, None
-                _min_height: 60
-                md_bg_color: utils.get_color_from_hex("#023e8a")
-                line_color: utils.get_color_from_hex("#023e8a")
+                size_hint: 1, 1
                 on_release: root.valider()
-                theme_text_color: "Custom"
-                text_color: "white"
-                text: "Confirmer"
-                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                MDButtonText:
+                    text: "Confirmer"
+                    pos_hint: {"center_x": 0.5, "center_y": 0.5}
 
 
             Widget:

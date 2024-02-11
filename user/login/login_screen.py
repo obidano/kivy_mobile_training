@@ -1,3 +1,4 @@
+from kivy.uix.screenmanager import SlideTransition
 from kivymd.uix.screen import MDScreen
 
 
@@ -11,6 +12,7 @@ class LoginScreen(MDScreen):
         self.mot_de_passe= mot_de_passe_clavier
     def valider(self):
         print("Envoie du formulaire", self.nom, self.mot_de_passe)
+        self.manager.transition = SlideTransition()
         self.manager.current = "etudiants"
     def on_enter(self, *args):
         pass

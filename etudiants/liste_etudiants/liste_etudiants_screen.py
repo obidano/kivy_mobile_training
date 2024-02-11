@@ -1,29 +1,28 @@
+from kivy.uix.screenmanager import SlideTransition
 from kivymd.uix.screen import MDScreen
+from faker import Faker
+from kivymd.uix.list import OneLineAvatarIconListItem, IconLeftWidget
 
 
 class ListeEtudiantsScreen(MDScreen):
-    def recuperer_etudiants(self):
-        from faker import Faker
-        faker=Faker()
 
-        # premiere version
-        # etudiants=[]
-        # for i in range(50):
-        #     nom= faker.name()
-        #     etudiants.append(nom)
-        # version 2
+    def retour_page_precedente(self):
+        self.manager.transition = SlideTransition()
+        self.manager.current = "login"
+
+    def recuperer_etudiants(self):
+        faker = Faker()
         etudiants = [faker.name() for i in range(50)]
         return etudiants
 
     def quand_la_page_sera_prete(self, *args):
-        from kivymd.uix.list import MDListItem, MDListItemLeadingIcon, \
-            MDListItemHeadlineText
-        self.ids.label_id.text = "Etudiants (1)"
-        etudiants=self.recuperer_etudiants()
+        etudiants = self.recuperer_etudiants()
+        self.ids.label_id.text = f"Etudiants ({len(etudiants)})"
+
         for data in etudiants:
-            ligne=MDListItem(
-                MDListItemLeadingIcon(icon="lock"),
-                MDListItemHeadlineText(text=data)
+            ligne = OneLineAvatarIconListItem(
+                IconLeftWidget(icon="lock"),
+                text=data
             )
             self.ids.ma_liste_de_donnees.add_widget(ligne)
 
