@@ -6,20 +6,25 @@ from kivymd.uix.list import OneLineAvatarIconListItem, IconLeftWidget
 
 class ListeEtudiantsScreen(MDScreen):
 
+    def __init__(self, **kwargs):
+        print("ListeEtudiantsScreen, on_init")
+        self.etudiants = self.recuperer_etudiants()
+        super().__init__()
+
     def retour_page_precedente(self):
         self.manager.transition = SlideTransition()
         self.manager.current = "login"
 
     def recuperer_etudiants(self):
         faker = Faker()
-        etudiants = [faker.name() for i in range(50)]
-        return etudiants
+        source_donnees = [faker.name() for i in range(20)]
+        return source_donnees
 
     def quand_la_page_sera_prete(self, *args):
-        etudiants = self.recuperer_etudiants()
-        self.ids.label_id.text = f"Etudiants ({len(etudiants)})"
 
-        for data in etudiants:
+        self.ids.label_id.text = f"Etudiants ({len(self.etudiants)})"
+
+        for data in self.etudiants:
             ligne = OneLineAvatarIconListItem(
                 IconLeftWidget(icon="lock"),
                 text=data
