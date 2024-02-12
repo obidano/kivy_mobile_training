@@ -10,4 +10,5 @@ sudo apt-get install libffi-dev
 pip install -r requirements.txt
 sudo apt install cython3 -y
 sudo ln -s /usr/bin/cython3 /usr/local/bin/cython
+python3 -m buildozer android clean
 python3 -m buildozer -v android debug
