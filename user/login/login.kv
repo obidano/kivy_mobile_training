@@ -3,7 +3,7 @@
         md_bg_color: utils.get_color_from_hex("#ffffff")
         MDBoxLayout:
             orientation: "vertical"
-            padding: dp(20)
+            padding: dp(30)
             Widget:
                 size_hint: 1, None
                 height: dp(50)
@@ -17,13 +17,13 @@
                 size_hint: 1, None
                 height: dp(50)
             MDLabel:
-                text: "[size=38][b]Connexion[/b][/size]"
+                text: "[size=38sp][b]Connexion[/b][/size]"
                 markup: True
                 halign: "center"
                 size_hint: 1, None
                 height: dp(40)
             MDLabel:
-                text: "[size=20]Plateforme pour CP[/size]"
+                text: "[size=15sp]Plateforme pour CP[/size]"
                 markup: True
                 halign: "center"
                 size_hint: 1, None
@@ -48,12 +48,12 @@
 
             Widget:
                 size_hint: 1, None
-                height: dp(20)
+                height: dp(30)
 
-            MDRectangleFlatButton:
+            MDFlatButton:
                 theme_width: "Custom"
                 size_hint: 1, None
-                _min_height: 60
+                padding: dp(0),dp(20),dp(0),dp(20)
                 md_bg_color: utils.get_color_from_hex("#023e8a")
                 line_color: utils.get_color_from_hex("#023e8a")
                 on_release: root.valider()
