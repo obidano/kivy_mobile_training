@@ -1,3 +1,4 @@
+from kivy.core.window import Window
 from kivy.uix.screenmanager import SlideTransition
 from kivymd.uix.screen import MDScreen
 from faker import Faker
@@ -34,3 +35,11 @@ class ListeEtudiantsScreen(MDScreen):
     def on_enter(self, *args):
         from kivy.clock import Clock
         Clock.schedule_once(self.quand_la_page_sera_prete, 0.5)
+        Window.bind(on_keyboard=self.touche_arriere_clique)
+
+    def on_pre_leave(self):
+        Window.unbind(on_keyboard=self.touche_arriere_clique)
+
+    def touche_arriere_clique(self, window, key, keycode, *largs):
+        if key == 27:
+            self.manager.current = "login"
